@@ -3,9 +3,8 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: international_relations_timer <= 0
-on-arrival: month_actions += 1; international_relations_timer += 12;
+on-arrival: month_actions += 1; international_relations_timer += 1;
 card-image: img/international.jpg
-max-visits: 4
 #subtitle: Building ties with our fraternal socialist parties.
 
 At the <span style="color: #D50032;">Labor and Socialist International</span>, we can forge contacts with our fraternal <span style="color: #c00000;">socialist</span> parties in <span style="color: #001489;">Europe</span> and across the world.
@@ -15,6 +14,7 @@ At the <span style="color: #D50032;">Labor and Socialist International</span>, w
 - @scandi: Learn the path of economics and reform from the Scandinavian <span style="color: #D70926;">social democrats</span>.
 - @comintern: Forget the second international - embed a spy in the <span style="color: #D50000;">Comintern</span>'s conference.
 - @america: Contact the <span style="color: #940f0f;">Socialist Party of America</span>.
+- @imf_loan: Request a loan from the IMF.
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -39,7 +39,6 @@ Our Reichsbanner can learn much in paramilitary organization and training from t
 
 [? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian <span style="color: #A50034;">Social Democratic Worker's Party</span> build up their resources in preparation for a future struggle, legally and illegally. ?]
 
-
 @scandi
 subtitle: -1 resources
 choose-if: resources >= 1
@@ -63,6 +62,12 @@ unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
 
 The <span style="color: #940f0f;">Socialist Party of America</span> is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+
+@imf_loan
+subtitle: +2 budget.
+on-arrival: budget += 2;
+
+A mysterious man gives us a lot of money, then vanishes. How odd.
 
 @reduce
 
