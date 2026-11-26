@@ -710,7 +710,7 @@ if (Q.dnef_formed) {
     Q.schleicher_approval -= (Q.schleicher_approval_decay / 2);
 }
 
-if (Q.rubicon && Q.month_actions >= 3 && Q.month_actions != Q.month_actions_checked) {
+if (Q.rubicon && Q.month_actions >= 2 && Q.month_actions != Q.month_actions_checked) {
     Q.rubicon_time += 1;
     Q.week += 1;
     Q.pro_republic -= 1;
@@ -1012,7 +1012,7 @@ Q.month_actions_checked = Q.month_actions;
 if (Q.ddp_in_popular_front && !Q.in_popular_front) Q.ddp_in_popular_front = 0;
 
 // 1. update dates
-if ((Q.month_actions >= 3 && !Q.rubicon) || (Q.month_actions >= 12 && Q.rubicon)) {
+if ((Q.month_actions >= 4 && !Q.rubicon) || (Q.month_actions >= 8 && Q.rubicon)) {
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
