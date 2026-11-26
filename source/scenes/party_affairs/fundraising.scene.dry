@@ -1,7 +1,7 @@
 title: Fundraising
 new-page: true
 view-if: fundraising_timer <= 0
-on-arrival: fundraising_timer = 1; month_actions += 1
+on-arrival: fundraising_timer = 2
 is-card: true
 card-image: img/poster_2.jpg
 tags: party_affairs
@@ -25,14 +25,15 @@ We maintain our current dues.
 
 @reduce
 subtitle: We will gain [+ dues - 1 +] resources.
-view-if: dues > 1
-on-arrival: dues -= 1; resources += dues; left_dissent -= 8; center_dissent -= 8; reformist_dissent -= 8; labor_dissent -= 8
+unavailable-subtitle: We lack resources.
+choose-if: dues > 1
+on-arrival: dues -= 1; resources += dues; left_dissent -= 10; center_dissent -= 10; reformist_dissent -= 10; labor_dissent -= 10
 
 Our current members appreciate this, but no one decides to join a party because of the low dues.
 
 @increase
 subtitle: We will gain [+ dues + 1 +] resources. [? if unemployed >= 15 : Given the present economic situation, this may be painful. ?][? if dues >= 4 : Dues are already rather high; increasing them might reduce our membership. ?]
-on-arrival: dues += 1; resources += 1; workers_spd -= 3; unemployed_spd -= 3; workers_spd -= 10 if unemployed >= 15; unemployed_spd -= 10 if unemployed >= 15; workers_spd -= 3 if dues >= 5; unemployed_spd -= 3 if dues >= 5
+on-arrival: dues += 1; resources += 1; workers_spd -= 2; unemployed_spd -= 2; workers_spd -= 5 if unemployed >= 15; unemployed_spd -= 5 if unemployed >= 15; workers_spd -= 2 if dues >= 5; unemployed_spd -= 2 if dues >= 5; month_actions += 1
 view-if: dues <= 4
 
 Our members grumble at this, and some of the less committed members leave. But now, we have access to additional resources.
