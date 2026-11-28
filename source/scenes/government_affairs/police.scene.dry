@@ -2,7 +2,7 @@ title: Internal Security
 new-page: true
 is-card: true
 tags: govt_affairs, cabinet
-on-arrival: police_timer += 2
+on-arrival: police_timer += 3
 view-if: spd_in_government = 1 and interior_minister_party = "SPD" and police_timer <= 0
 card-image: img/portraits/SeveringCarl.jpg
 
@@ -33,7 +33,7 @@ Current interior police loyalty: [+ interior_police_loyalty : loyalty +]
 go-to: investigate_corruption_success if interior_police_loyalty >= 0.5; investigate_corruption_failure if interior_police_loyalty < 0.5
 
 @investigate_corruption_success
-on-arrival: investigate_corruption += 1; workers_spd += 10; inflation -= 1; dvp_relation -= 2; dvp_right += 1; ddp_relation -= 1; ddp_left += 1; ddp_cohesion -= 1; lvp_relation -= 1; lvp_right += 1
+on-arrival: investigate_corruption += 1; workers_spd += 10; inflation -= 1; dvp_relation -= 2; dvp_right += 1; ddp_relation -= 1; ddp_left += 1; ddp_cohesion -= 1; lvp_relation -= 2; lvp_right += 1
 
 Corruption in big business is rampant, of course. We have uncovered a number of scandals, and publicizing them brings new attention to the work of Interior Minister [+ interior_minister +], building up his popular appeal and that of the <span style="color: #c00000;">**SPD**</span>.
 
@@ -46,7 +46,7 @@ Unfortunately, our investigations have failed to turn up anything. Rumors are th
 go-to: investigate_far_right_success if interior_police_loyalty >= 0.55; investigate_far_right_failure if interior_police_loyalty < 0.55
 
 @investigate_far_right_success
-on-arrival: investigate_far_right += 1; sa_strength *= 0.8; workers_nsdap -= 5; new_middle_nsdap -= 5; old_middle_nsdap -= 5; nazi_urgency += 5; unemployed_spd += 5; coup_progress -= 2
+on-arrival: investigate_far_right += 1; sa_strength *= 0.8; workers_nsdap -= 5; new_middle_nsdap -= 5; old_middle_nsdap -= 5; nazi_urgency += 2; unemployed_spd += 5; coup_progress -= 2
 
 [? if investigate_far_right == 1 : We have discovered collusion between Hjalmar Schacht, president of the Reichsbank, and the <span style="color: #7A3C00;">Nazis</span>. This is very useful information. ?]
 [? if investigate_far_right == 2 : We have discovered illegal arms smuggling by the <span style="color: #7A3C00;">**SA**</span>, the <span style="color: #7A3C00;">Nazi</span> paramilitary. ?]
